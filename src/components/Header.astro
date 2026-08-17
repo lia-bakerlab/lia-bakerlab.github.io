@@ -1,0 +1,121 @@
+---
+import { site } from '../data/site';
+---
+
+<header
+  class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-navy/90 text-white backdrop-blur-md"
+>
+  <div
+    class="container flex min-h-20 items-center justify-between"
+  >
+    <a
+      href="/"
+      class="font-display text-xl tracking-[-0.02em]"
+      aria-label={`${site.name} - Inicio`}
+    >
+      {site.name}
+    </a>
+
+    <nav
+      class="hidden items-center gap-8 lg:flex"
+      aria-label="Navegación principal"
+    >
+      {
+        site.navigation.map((item) => (
+          <a
+            href={item.href}
+            class="text-[12px] font-semibold uppercase tracking-[0.1em] text-white/80 transition hover:text-gold"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <a
+      href="#contacto"
+      class="hidden border border-gold px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.1em] text-gold transition hover:bg-gold hover:text-navy lg:inline-flex"
+    >
+      Solicitar información
+    </a>
+
+    <button
+      id="menu-toggle"
+      type="button"
+      class="flex h-11 w-11 items-center justify-center lg:hidden"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Abrir menú"
+    >
+      <span class="sr-only">Menú</span>
+
+      <span class="flex w-6 flex-col gap-[5px]">
+        <span class="block h-px w-full bg-white"></span>
+        <span class="block h-px w-full bg-white"></span>
+      </span>
+    </button>
+  </div>
+
+  <div
+    id="mobile-menu"
+    class="hidden border-t border-white/10 bg-navy lg:hidden"
+  >
+    <nav
+      class="container flex flex-col py-6"
+      aria-label="Navegación móvil"
+    >
+      {
+        site.navigation.map((item) => (
+          <a
+            href={item.href}
+            class="mobile-link border-b border-white/10 py-4 text-sm uppercase tracking-[0.1em] text-white/80"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+
+      <a
+        href="#contacto"
+        class="mobile-link mt-6 flex min-h-12 items-center justify-center border border-gold text-xs font-semibold uppercase tracking-[0.1em] text-gold"
+      >
+        Solicitar información
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const button = document.querySelector<HTMLButtonElement>(
+    '#menu-toggle'
+  );
+
+  const menu = document.querySelector<HTMLElement>(
+    '#mobile-menu'
+  );
+
+  const links = document.querySelectorAll(
+    '.mobile-link'
+  );
+
+  const closeMenu = () => {
+    menu?.classList.add('hidden');
+    button?.setAttribute('aria-expanded', 'false');
+  };
+
+  button?.addEventListener('click', () => {
+    const isOpen =
+      button.getAttribute('aria-expanded') === 'true';
+
+    button.setAttribute(
+      'aria-expanded',
+      String(!isOpen)
+    );
+
+    menu?.classList.toggle('hidden');
+  });
+
+  links.forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>
