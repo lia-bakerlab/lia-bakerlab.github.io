@@ -1,3 +1,6 @@
+import { url } from "astro:schema";
+import Ubicacion from "../components/sections/Ubicacion.astro";
+
 export const site = {
   name: 'Estate Excellence',
 
@@ -133,3 +136,69 @@ export const site = {
   }
   
 } as const;
+
+export const media = 
+  {
+    proyecto:{
+      url:'/images/la-castellana/Depto.jpg'
+    },
+    ubicacion: {
+      url: '/images/la-castellana/FOTO-BARRIO-ALTA.jpg'
+    },
+    carrousel: [
+      '/images/carrousel/11.jpg',
+      '/images/carrousel/22.jpg',
+      '/images/carrousel/33.jpg'
+    ],
+    entorno:{
+      url: '/images/la-castellana/mapa-GO.jpg'
+    }
+  };
+
+export const logos =
+  {
+    GO: '/images/logo/GO_Logo.png',
+    LogosFooter: [
+      '/images/logo/GO_LaCastellana.png',
+      '/images/logo/LogoConstructoras.png',
+      '/images/logo/PoweredBakerlab.png'
+    ]
+  };
+
+export const carrousel = [
+  {
+    src: "/images/carrousel/11.jpg",
+    alt: "entorno y barrio"
+  },
+  {
+    src: "/images/carrousel/22.jpg",
+    alt: "entorno y barrio"
+  },
+  {
+    src: "/images/carrousel/33.jpg",
+    alt: "entorno y barrio"
+  }
+]
+
+export const navigation = [
+  {
+    label: 'Proyecto',
+    href: '#proyecto'
+  },
+  {
+    label: 'Ubicación',
+    href: '#ubicacion'
+  },
+  {
+    label: 'Galería',
+    href: '#galeria'
+  },
+  {
+    label: 'Entorno',
+    href: '#entorno'
+  },
+  {
+    label: 'Contacto',
+    href: '#contacto'
+  }
+];

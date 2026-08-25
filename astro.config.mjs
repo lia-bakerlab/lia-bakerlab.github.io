@@ -1,3 +1,4 @@
+import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
@@ -5,4 +6,7 @@ export default defineConfig({
   site: 'https://lia-bakerlab.github.io',
   //---FIN URL DE DOMINIO---//
   output: 'static',
+  vite : {
+    plugins:[tailwindcss()],
+  }
 });

@@ -1,83 +1,36 @@
 ---
 import { site } from '../data/site';
+import { logos } from '../data/site';
 
 const year = new Date().getFullYear();
 ---
-
 <footer class="bg-navy text-white">
   <div class="container py-16 lg:py-20">
-    <div
-      class="grid gap-12 border-b border-white/15 pb-14 lg:grid-cols-3"
-    >
-      <div>
-        <a
-          href="/"
-          class="font-display text-2xl"
-        >
-          {site.name}
-        </a>
-      </div>
 
-      <div>
-        <p
-          class="mb-5 text-[11px] font-semibold uppercase tracking-[0.12em] text-gold"
-        >
-          Navegación
-        </p>
+    <div class="grid grid-cols-3 items-center border-b border-white/15 pb-14">
 
-        <nav class="flex flex-col gap-3">
-          {
-            site.navigation.map((item) => (
-              <a
-                href={item.href}
-                class="text-sm text-white/70 transition hover:text-white"
-              >
-                {item.label}
-              </a>
-            ))
-          }
-        </nav>
-      </div>
+      {
+        logos.LogosFooter.map((element) => (
+          <div class="flex items-center justify-center ">
+            <img
+              src={element}
+              alt=""
+              class="max-h-30 max-w-[120px] w-auto object-contain"
+            />
+          </div>
+        ))
+      }
 
-      <div>
-        <p
-          class="mb-5 text-[11px] font-semibold uppercase tracking-[0.12em] text-gold"
-        >
-          Contacto
-        </p>
-
-        <div class="space-y-2 text-sm text-white/70">
-          <p>
-            <a
-              href={`mailto:${site.contact.email}`}
-              class="transition hover:text-white"
-            >
-              {site.contact.email}
-            </a>
-          </p>
-
-          <p>
-            <a
-              href={`tel:${site.contact.phone.replace(/\s/g, '')}`}
-              class="transition hover:text-white"
-            >
-              {site.contact.phone}
-            </a>
-          </p>
-        </div>
-      </div>
     </div>
 
     <div
       class="flex flex-col gap-3 pt-8 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between"
     >
-      <p>
-        © {year} {site.name}. Todos los derechos reservados.
-      </p>
 
       <p>
         Información sujeta a verificación.
       </p>
     </div>
+
   </div>
 </footer>

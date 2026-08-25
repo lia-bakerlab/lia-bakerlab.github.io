@@ -1,0 +1,67 @@
+---
+import Image from 'astro/components/Image.astro';
+import DeptoFoto from '../../../public/images/la-castellana/detalle-alta.jpg';
+---
+<section
+  id="proyecto"
+  class="w-full h-screen overflow-hidden bg-white text-left text-[#a09981]"
+>
+  <div class="grid h-full grid-cols-1 md:grid-cols-2">
+
+    <!-- TEXTO -->
+    <div class="flex h-full items-center">
+      <div class="m-[10%]">
+
+        <span class="eyebrow">
+          El proyecto
+        </span>
+
+        <h2
+          class="tracking-tight md:tracking-wider leading-[150%] font-rellika text-[60px] font-light  text-[#2d2d25]"
+          style="margin-bottom: 5%;"
+        >
+          Tu espacio, en el<br />
+          lugar correcto.
+        </h2>
+
+        <p>
+          La Castellana es un proyecto residencial
+          de Golf Oriente pensado para quienes
+          valoran vivir conectados a la ciudad
+          sin renunciar a la tranquilidad de
+          un barrio consolidado.
+        </p>
+
+        <p>
+          Departamentos de 1 y 2 dormitorios
+          se integran a una ubicación privilegiada
+          en el sector de La Castellana Sur
+          con Apoquindo, uno de los puntos
+          estratégicos de Las Condes.
+        </p>
+<br>
+
+            <a
+              href="#contacto"
+              class="button button-secondary"
+            >
+              Cotiza Aquí
+            </a>
+
+      </div>
+    </div>
+
+
+    <!-- IMAGEN -->
+    <div class="h-full w-full overflow-hidden">
+
+      <Image
+        src={DeptoFoto}
+        alt="Imagen alta resolución del departamento en el render del proyecto"
+        class="h-full w-full object-cover"
+      />
+
+    </div>
+
+  </div>
+</section>

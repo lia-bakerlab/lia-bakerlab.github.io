@@ -1,0 +1,73 @@
+---
+import Image from 'astro/components/Image.astro';
+import { media } from '../../data/site';
+import myGif from '../../../public/images/Hero.gif'
+---
+ <section
+      id="inicio"
+      class="text-left text-white hero relative w-screen h-screen overflow-hidden group"
+    >
+ 
+  <Image 
+    src={myGif} 
+    id = "hero"
+    alt="A descriptive description of the hero image" 
+    loading="eager"
+    class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 ease-out"
+    layout='constrained'
+    fetchpriority="high"
+  />
+
+<style>
+  .hero{
+    background-color: black;
+  }
+  #hero{
+    opacity: 45%;
+  }
+
+</style>
+
+    <div class="z-10"
+      style="margin -top: 20%;"
+    >
+
+        <div class="left-15 hero-content ">
+
+          <span class="eyebrow">
+            Edificio la Castellana
+          </span>
+
+          <p class="hero-claim" style="font-family: Rellika;">
+            La cercanía es calidad de vida
+          </p>
+
+          <p class="hero-description">
+            Departamentos de 1 y 2 dormitorios
+            en La Castellana Sur con Apoquindo.
+            Vive en un barrio consolidado,
+            estratégicamente conectado con Las Condes.
+          </p>
+
+          <div class="hero-actions">
+
+            <a
+              href="#proyecto"
+              class="button button-primary"
+            >
+              Conoce el proyecto
+            </a>
+
+            <a
+              href="#contacto"
+              class="button button-secondary"
+            >
+              Cotiza tu departamento
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
